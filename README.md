@@ -45,8 +45,29 @@ We built an app that does all the thinking for you:
 
 ## Implementation  
 
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/hangtime.git
+
+# Navigate into the project
+cd hangtime
+```
 
 
+### Run
+```bash
+# Start the development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Project Documentation
 
 ### Screenshots
 
