@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Clock, Info, Lightbulb, Coffee, Sun, Cloud, CloudRain, ArrowLeft, RotateCcw, Tv, Music, Play } from 'lucide-react';
+import { Clock, Info, Lightbulb, Coffee, Sun, Cloud, CloudRain, ArrowLeft, RotateCcw, Tv, Music, Play, Book } from 'lucide-react';
 import CircularTimer from './CircularTimer';
 
 type Props = {
@@ -15,7 +15,7 @@ type Props = {
 const SUGGESTIONS: Record<string, string[]> = {
   sunny: ['Sip a cool drink 🥤', 'Read a chapter 📖', 'Quick walk outside 🚶'],
   cloudy: ['Make a cup of tea 🍵', 'Tidy a shelf 🧹', 'Call a friend ☎️'],
-  rainy: ['Watch an episode 📺', 'Listen to this playlist 🎵', 'Stretch for 10 minutes 🧘']
+  rainy: ['Watch an episode 📺', 'Listen to this playlist 🎵', 'Stretch for 10 minutes 🧘', 'Read a book 📚']
 };
 
 export default function DryingEstimate({ estimateHours, message, condition, onRestart, onBack }: Props) {
@@ -35,7 +35,7 @@ export default function DryingEstimate({ estimateHours, message, condition, onRe
         return <Sun className="h-24 w-24 text-yellow-500" />;
     }
   };
-
+  
   return (
     <section className="container py-6 animate-fade-in" aria-labelledby="estimate-title">
       
@@ -54,16 +54,45 @@ export default function DryingEstimate({ estimateHours, message, condition, onRe
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {suggestions.map((suggestion, i) => (
-                    <div key={i} className="p-3 transition-colors">
-                      <div className="text-base font-medium flex items-center gap-3">
-                        {suggestion.includes('Watch an episode') && <Tv className="h-5 w-5 text-primary" />}
-                        {suggestion.includes('Listen to this playlist') && <Music className="h-5 w-5 text-primary" />}
-                        {suggestion.includes('Stretch for 10 minutes') && <Play className="h-5 w-5 text-red-500" />}
-                        {suggestion}
+                  {suggestions.map((suggestion, i) => {
+                    let link = '';
+                    if (suggestion.includes('Watch an episode')) {
+                      link = 'https://www.netflix.com/in/Title/70143836';
+                    } else if (suggestion.includes('Listen to this playlist')) {
+                      link = 'https://music.youtube.com/';
+                    } else if (suggestion.includes('Stretch for 10 minutes')) {
+                      link = 'https://www.youtube.com/watch?v=TRNVNAuJtkU';
+                    } else if (suggestion.includes('Read a book')) {
+                      link = 'https://read.amazon.in/landing';
+                    }
+                    
+                    return (
+                      <div key={i} className="p-3 transition-colors">
+                        {link ? (
+                                                     <a 
+                             href={link} 
+                             target="_blank" 
+                             rel="noopener noreferrer"
+                             className="text-base font-medium flex items-center gap-3 hover:text-primary transition-colors cursor-pointer"
+                           >
+                             {suggestion.includes('Watch an episode') && <Tv className="h-5 w-5 text-primary" />}
+                             {suggestion.includes('Listen to this playlist') && <Music className="h-5 w-5 text-primary" />}
+                             {suggestion.includes('Stretch for 10 minutes') && <Play className="h-5 w-5 text-red-500" />}
+                             {suggestion.includes('Read a book') && <Book className="h-5 w-5 text-primary" />}
+                             {suggestion}
+                           </a>
+                                                 ) : (
+                           <div className="text-base font-medium flex items-center gap-3">
+                             {suggestion.includes('Watch an episode') && <Tv className="h-5 w-5 text-primary" />}
+                             {suggestion.includes('Listen to this playlist') && <Music className="h-5 w-5 text-primary" />}
+                             {suggestion.includes('Stretch for 10 minutes') && <Play className="h-5 w-5 text-red-500" />}
+                             {suggestion.includes('Read a book') && <Book className="h-5 w-5 text-primary" />}
+                             {suggestion}
+                           </div>
+                         )}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
