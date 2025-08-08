@@ -1,7 +1,7 @@
 # HangTime 🎯
 
 ## Basic Details
-**Team Name:** Weather Wizards  
+**Team Name:** Groove
 
 **Team Members**  
 - **Team Lead:** [Ashwin A] – [CUSAT,SOE]  
@@ -61,6 +61,8 @@ npm install
 
 # Start development server
 npm run dev
+
+
 
 # Build for production
 npm run build
