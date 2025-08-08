@@ -1,106 +1,69 @@
-# HangTime Weather - Air-Drying Assistant
+# HangTime 🎯
 
-A beautiful, interactive web application that helps you determine the best time to air-dry your clothes based on real-time weather conditions.
+## Basic Details
+**Team Name:** Weather Wizards  
 
-## Features
+**Team Members**  
+- **Team Lead:** [Your Name] – [Your College]  
+- **Member 2:** [Member Name] – [College]  
+- **Member 3:** [Member Name] – [College]  
 
-- 🌤️ **Real-time Weather Data**: Get current weather conditions for your location
-- 👕 **Smart Drying Estimates**: Calculate drying times based on clothing type and weather
-- 📍 **Location Search**: Find your location with autocomplete or GPS
-- 🎨 **Beautiful UI**: Weather-themed gradients and smooth animations
-- 📱 **Responsive Design**: Works perfectly on mobile and desktop
-- 🌙 **Dark Mode**: Built-in theme support
+---
 
-## Getting Started
+## Project Description
+HangTime is a **smart laundry timing app** that tells you *exactly* when to hang your clothes outside based on **real-time weather data**.  
+It calculates **drying times**, gives **weather alerts**, and even suggests fun activities while you wait.  
 
-### Prerequisites
+---
 
-- Node.js (v16 or higher)
-- npm or yarn
+## The Problem (That Doesn’t Exist)
+Who has the time (or patience) to check the weather, calculate humidity, and guess if their socks will dry before the rain?  
+People are wasting *precious minutes* staring at clouds and hoping their laundry survives. The struggle is… questionably real. 🧦☁️  
+
+---
+
+## The Solution (That Nobody Asked For)
+We built an app that does all the thinking for you:  
+- Enter your **location**  
+- Select your **clothing type**  
+- Get **precise drying time estimates** with a beautiful **bento grid dashboard**  
+- Enjoy curated activity suggestions while you wait — Netflix, YouTube Music, Kindle, or even stretching tutorials  
+- All with **animated particles** in the background, because why not?  
+
+---
+
+## Technical Details
+
+### Technologies/Components Used
+**For Software:**  
+- **Languages:** TypeScript  
+- **Frameworks:** React 18 + Vite  
+- **Libraries:** Tailwind CSS, shadcn/ui, Lucide React  
+- **APIs:** Open-Meteo (weather), Nominatim (geocoding)  
+- **Tools:** VS Code, Git, npm  
+
+---
+
+## Implementation  
 
 ### Installation
-
-1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd hang-time-weather
-```
+# Clone the repository
+git clone https://github.com/yourusername/hangtime.git
 
-2. Install dependencies:
-```bash
-npm install
-```
+# Navigate into the project
+cd hangtime
 
-3. Start the development server:
-```bash
+### Run
+# Start development server
 npm run dev
-```
 
-4. Open your browser and navigate to `http://localhost:5173`
+# Build for production
+npm run build
 
-## Available Scripts
+# Preview production build
+npm run preview
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
 
-## Technologies Used
-
-- **React 18** - Modern React with hooks
-- **TypeScript** - Type safety and better development experience
-- **Vite** - Fast build tool and development server
-- **Tailwind CSS** - Utility-first CSS framework
-- **shadcn/ui** - Beautiful, accessible UI components
-- **React Router** - Client-side routing
-- **TanStack Query** - Data fetching and caching
-- **Open-Meteo API** - Free weather data service
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── hangtime/          # Main app components
-│   │   ├── ActivitySuggestions.tsx
-│   │   ├── CircularTimer.tsx
-│   │   ├── ClothingSelect.tsx
-│   │   ├── DryingEstimate.tsx
-│   │   ├── LocationSearch.tsx
-│   │   ├── LogoIntro.tsx
-│   │   ├── WeatherBackground.tsx
-│   │   └── WeatherSummary.tsx
-│   └── ui/               # Reusable UI components
-├── pages/                # Page components
-├── hooks/                # Custom React hooks
-├── lib/                  # Utility functions
-└── index.css            # Global styles and design system
-```
-
-## How It Works
-
-1. **Location Selection**: Users enter their location or use GPS
-2. **Weather Analysis**: App fetches real-time weather data
-3. **Clothing Type**: Users select their clothing type (light/medium/heavy)
-4. **Drying Calculation**: Smart algorithm estimates drying time
-5. **Activity Suggestions**: Weather-appropriate activities while waiting
-
-## Deployment
-
-This project can be deployed to any static hosting service:
-
-- **Vercel**: Connect your GitHub repo for automatic deployments
-- **Netlify**: Drag and drop the `dist` folder after building
-- **GitHub Pages**: Use GitHub Actions for automatic deployment
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+# Install dependencies
+npm install
