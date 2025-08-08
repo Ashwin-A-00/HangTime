@@ -16,9 +16,24 @@ type Props = {
 
 export default function ClothingSelect({ onSelect, selected, onNext, condition }: Props) {
   const cards = [
-    { key: 'light', title: 'Light', Icon: TShirt },
-    { key: 'medium', title: 'Medium', Icon: Jeans },
-    { key: 'heavy', title: 'Heavy', Icon: Blanket },
+    { 
+      key: 'light', 
+      title: 'Light', 
+      Icon: TShirt,
+      examples: 'T-shirts, Underwear, Socks'
+    },
+    { 
+      key: 'medium', 
+      title: 'Medium', 
+      Icon: Jeans,
+      examples: 'Shirts, Pants, Shorts'
+    },
+    { 
+      key: 'heavy', 
+      title: 'Heavy', 
+      Icon: Blanket,
+      examples: 'Sweatshirts, Hoodies, Jackets'
+    },
   ] as const;
 
   const getWeatherAlert = () => {
@@ -73,10 +88,15 @@ export default function ClothingSelect({ onSelect, selected, onNext, condition }
       )}
       
       <div className="flex flex-col gap-4 max-w-md mx-auto">
-        {cards.map(({ key, title, Icon }) => {
+        {cards.map(({ key, title, Icon, examples }) => {
           const active = selected === key;
           return (
-            <button key={key} onClick={() => onSelect(key)} aria-pressed={active} className={`rounded-xl border p-4 bg-card card-shadow hover-scale tilt ${active ? 'ring-2 ring-ring' : ''}`}>
+            <button 
+              key={key} 
+              onClick={() => onSelect(key)} 
+              aria-pressed={active} 
+              className={`group relative rounded-xl border p-4 bg-card card-shadow hover-scale tilt ${active ? 'ring-2 ring-ring' : ''}`}
+            >
               <Card className="border-0 shadow-none bg-transparent">
                 <CardContent className="p-0 flex flex-row items-center gap-4">
                   <div className="w-16 h-16">
@@ -85,6 +105,13 @@ export default function ClothingSelect({ onSelect, selected, onNext, condition }
                   <div className="text-lg font-medium">{title}</div>
                 </CardContent>
               </Card>
+              
+              {/* Hover tooltip with examples */}
+              <div className="absolute bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t rounded-b-xl p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                <p className="text-xs text-muted-foreground text-center font-medium">
+                  {examples}
+                </p>
+              </div>
             </button>
           );
         })}
