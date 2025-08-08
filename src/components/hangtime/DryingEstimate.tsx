@@ -18,49 +18,64 @@ export default function DryingEstimate({ estimateHours, message, onNext }: Props
     <section className="container py-12 animate-fade-in" aria-labelledby="estimate-title">
       <h2 id="estimate-title" className="font-display text-3xl font-semibold text-center mb-8">Drying Dashboard</h2>
       
-      <div className="max-w-lg mx-auto">
-        {/* Circular Timer */}
-        <div className="mb-8">
-          <CircularTimer hours={hours} minutes={mins} totalHours={estimateHours} />
-        </div>
-        
-        {/* Dashboard Cards */}
-        <div className="space-y-4">
-          <Card className="tilt">
-            <CardHeader className="flex flex-row items-center gap-2">
-              <Clock className="h-5 w-5 text-primary" aria-hidden="true" />
-              <CardTitle>Estimated Drying Time</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-display font-bold text-primary">
-                {hours}h {mins}m
+      {/* Bento Grid Layout */}
+      <div className="max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-fr">
+          
+          {/* Main Timer - Spans 2 columns on desktop */}
+          <div className="md:col-span-2 md:row-span-2">
+            <Card className="h-full flex flex-col items-center justify-center p-8 tilt">
+              <div className="text-center">
+                <CircularTimer hours={hours} minutes={mins} totalHours={estimateHours} />
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold text-muted-foreground mb-2">Estimated Drying Time</h3>
+                  <div className="text-4xl font-display font-bold text-primary">
+                    {hours}h {mins}m
+                  </div>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            </Card>
+          </div>
 
-          <Card className="tilt">
-            <CardHeader className="flex flex-row items-center gap-2">
-              <Info className="h-5 w-5 text-primary" aria-hidden="true" />
-              <CardTitle>Status</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">{message}</p>
-            </CardContent>
-          </Card>
+          {/* Status Card - Top right */}
+          <div className="md:col-span-1">
+            <Card className="h-full tilt">
+              <CardHeader className="flex flex-row items-center gap-2 pb-3">
+                <Info className="h-5 w-5 text-primary" aria-hidden="true" />
+                <CardTitle className="text-lg">Status</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">{message}</p>
+              </CardContent>
+            </Card>
+          </div>
 
-          <Card className="tilt">
-            <CardHeader className="flex flex-row items-center gap-2">
-              <Lightbulb className="h-5 w-5 text-primary" aria-hidden="true" />
-              <CardTitle>Quick Tips</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Check clothes periodically</li>
-                <li>• Bring in before rain</li>
-                <li>• Flip heavier items halfway through</li>
-              </ul>
-            </CardContent>
-          </Card>
+          {/* Quick Tips Card - Bottom right */}
+          <div className="md:col-span-1">
+            <Card className="h-full tilt">
+              <CardHeader className="flex flex-row items-center gap-2 pb-3">
+                <Lightbulb className="h-5 w-5 text-primary" aria-hidden="true" />
+                <CardTitle className="text-lg">Quick Tips</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <span>Check clothes periodically</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <span>Bring in before rain</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <span>Flip heavier items halfway through</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
         </div>
       </div>
       
