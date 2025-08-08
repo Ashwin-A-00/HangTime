@@ -45,14 +45,6 @@ We built an app that does all the thinking for you:
 
 ## Implementation  
 
-### Installation
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/hangtime.git
-
-# Navigate into the project
-cd hangtime
----
 
 
 
