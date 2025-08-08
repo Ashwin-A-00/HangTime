@@ -4,9 +4,8 @@
 **Team Name:** Weather Wizards  
 
 **Team Members**  
-- **Team Lead:** [Your Name] – [Your College]  
-- **Member 2:** [Member Name] – [College]  
-- **Member 3:** [Member Name] – [College]  
+- **Team Lead:** [Ashwin A] – [CUSAT,SOE]  
+- **Member 2:** [Adithya M] – [CUSAT,SOE]  
 
 ---
 
