@@ -52,8 +52,13 @@ git clone https://github.com/yourusername/hangtime.git
 
 # Navigate into the project
 cd hangtime
+---
 
 ### Run
+```bash
+# Install dependencies
+npm install
+
 # Start development server
 npm run dev
 
@@ -63,6 +68,3 @@ npm run build
 # Preview production build
 npm run preview
 
-
-# Install dependencies
-npm install
