@@ -52,31 +52,24 @@ git clone https://github.com/yourusername/hangtime.git
 
 # Navigate into the project
 cd hangtime
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ---
 
-Project Documentation
-Screenshots
-
-Main dashboard showing drying time, weather status, and activity suggestions in a bento grid layout.
 
 
-Particle animation background with interactive weather cards.
+### Screenshots
 
+![Screenshot1](./assets/screenshot1.png)  
+*Main dashboard showing drying time, weather status, and activity suggestions in a bento grid layout.*
 
-Location search interface using Nominatim API with debounced results.
+![Screenshot2](./assets/screenshot2.png)  
+*Particle animation background with interactive weather cards.*
 
-Diagrams
+![Screenshot3](./assets/screenshot3.png)  
+*Location search interface using Nominatim API with debounced results.*
 
-System architecture showing the flow from user input and geolocation, through weather API calls, to drying time calculation and activity suggestion rendering in the UI.
+---
+
+### Diagrams
+
+![Workflow](./assets/workflow-diagram.png)  
+*System architecture showing the flow from user input and geolocation, through weather API calls, to drying time calculation and activity suggestion rendering in the UI.*
