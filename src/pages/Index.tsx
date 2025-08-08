@@ -112,7 +112,12 @@ export default function Index() {
           </div>
         )}
         {step === 'clothes' && (
-          <ClothingSelect selected={selected} onSelect={(t) => setSelected(t)} onNext={() => { if (selected) { computeEstimate(); setStep('estimate'); } }} />
+          <ClothingSelect 
+            selected={selected} 
+            onSelect={(t) => setSelected(t)} 
+            onNext={() => { if (selected) { computeEstimate(); setStep('estimate'); } }}
+            condition={condition}
+          />
         )}
         {step === 'estimate' && (
           <DryingEstimate estimateHours={estimate} message={message} onNext={() => setStep('suggestions')} />
