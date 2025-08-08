@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" fill="none" viewBox="0 0 1200 630">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Sun -->
+  <circle cx="1000" cy="150" r="60" fill="#fbbf24" filter="url(#shadow)"/>
+  <g stroke="#f59e0b" stroke-width="3" fill="none">
+    <line x1="1000" y1="70" x2="1000" y2="50"/>
+    <line x1="1000" y1="230" x2="1000" y2="250"/>
+    <line x1="940" y1="150" x2="920" y2="150"/>
+    <line x1="1060" y1="150" x2="1080" y2="150"/>
+    <line x1="940" y1="70" x2="920" y2="50"/>
+    <line x1="1060" y1="70" x2="1080" y2="50"/>
+    <line x1="940" y1="230" x2="920" y2="250"/>
+    <line x1="1060" y1="230" x2="1080" y2="250"/>
+  </g>
+  
+  <!-- Clothes line -->
+  <line x1="200" y1="200" x2="800" y2="200" stroke="#8b5a3c" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="200" cy="200" r="6" fill="#8b5a3c"/>
+  <circle cx="800" cy="200" r="6" fill="#8b5a3c"/>
+  
+  <!-- Clothes -->
+  <g filter="url(#shadow)">
+    <!-- T-shirt -->
+    <path d="M300 180 L320 200 L340 180 L360 200 L380 180 L380 220 L300 220 Z" fill="#e5e7eb"/>
+    <rect x="300" y="200" width="80" height="20" fill="#d1d5db"/>
+    
+    <!-- Jeans -->
+    <rect x="450" y="180" width="60" height="40" fill="#3b82f6"/>
+    <rect x="450" y="200" width="60" height="20" fill="#1d4ed8"/>
+    
+    <!-- Blanket -->
+    <rect x="550" y="180" width="80" height="40" fill="#f87171"/>
+    <rect x="550" y="200" width="80" height="20" fill="#ef4444"/>
+  </g>
+  
+  <!-- Weather icons -->
+  <g transform="translate(100, 300)">
+    <!-- Temperature -->
+    <circle cx="30" cy="30" r="25" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="30" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">22°</text>
+    <text x="30" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#92400e">Temp</text>
+  </g>
+  
+  <g transform="translate(200, 300)">
+    <!-- Humidity -->
+    <path d="M30 10 Q30 5 35 5 Q40 5 40 10 Q40 15 35 20 Q30 15 30 10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="35" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1e40af">65%</text>
+    <text x="35" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1e40af">Humidity</text>
+  </g>
+  
+  <g transform="translate(300, 300)">
+    <!-- Wind -->
+    <path d="M10 30 Q20 25 30 30 Q40 35 50 30" stroke="#6b7280" stroke-width="3" fill="none"/>
+    <path d="M10 40 Q20 35 30 40 Q40 45 50 40" stroke="#6b7280" stroke-width="3" fill="none"/>
+    <text x="30" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#374151">3 m/s</text>
+    <text x="30" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#374151">Wind</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#1f2937">HangTime</text>
+  <text x="600" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#6b7280">Best time to air-dry clothes</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#9ca3af">Real-time weather-based drying estimates</text>
+</svg>
