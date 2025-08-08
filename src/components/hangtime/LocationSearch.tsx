@@ -116,7 +116,7 @@ export default function LocationSearch({ onSelect }: Props) {
 
   return (
     <section className="container max-w-xl mx-auto py-12 animate-fade-in" aria-labelledby="location-title">
-      <h1 id="location-title" className="font-display text-4xl md:text-5xl font-bold text-center mb-6">HangTime</h1>
+      <h1 id="location-title" className="font-display text-6xl md:text-7xl font-bold text-center mb-6">HangTime</h1>
       <p className="text-center text-muted-foreground mb-8">When to Hang? We Did the Math, So You Don't Have To.</p>
       
       {/* Enhanced Search Container */}

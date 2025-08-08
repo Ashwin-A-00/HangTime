@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import WeatherBackground from '@/components/hangtime/WeatherBackground';
 import PointerGlow from '@/components/hangtime/PointerGlow';
+import ParticleBackground from '@/components/hangtime/ParticleBackground';
 import LogoIntro from '@/components/hangtime/LogoIntro';
 import LocationSearch, { LocationItem } from '@/components/hangtime/LocationSearch';
 import WeatherSummary from '@/components/hangtime/WeatherSummary';
@@ -104,8 +105,9 @@ export default function Index() {
 
   return (
     <WeatherBackground condition={condition}>
+      <ParticleBackground />
       <PointerGlow />
-      <main className="min-h-screen flex flex-col items-center justify-center px-4">
+      <main className="min-h-screen flex flex-col items-center justify-center px-4 relative z-10">
         {step === 'logo' && <LogoIntro onDone={() => setStep('location')} />}
         {step === 'location' && <LocationSearch onSelect={onLocationSelect} />}
         {step === 'summary' && (
