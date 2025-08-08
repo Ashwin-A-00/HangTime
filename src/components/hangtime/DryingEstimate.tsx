@@ -47,7 +47,7 @@ export default function DryingEstimate({ estimateHours, message, condition, onRe
 
           {/* While You Wait - Top right */}
           <div className="col-span-2 row-span-2">
-            <Card className="h-full tilt" style={{ backgroundColor: '#f0ede4' }}>
+            <Card className="h-full tilt" style={{ backgroundColor: '#E8D5B7' }}>
               <CardHeader className="flex flex-row items-center gap-2 pb-2">
                 <Coffee className="h-5 w-5 text-primary" />
                 <CardTitle className="text-lg">While You Wait</CardTitle>
@@ -73,7 +73,7 @@ export default function DryingEstimate({ estimateHours, message, condition, onRe
           <div className="col-span-1 row-span-2 flex flex-col gap-3">
             {/* 99 - Top square */}
             <div className="row-span-1">
-              <Card className="h-full flex flex-col items-center justify-center p-0 tilt" style={{ aspectRatio: '1/1', backgroundColor: '#c0b078' }}>
+              <Card className="h-full flex flex-col items-center justify-center p-0 tilt" style={{ aspectRatio: '1/1', backgroundColor: '#B8D4E3' }}>
                 <CardContent className="flex-1 flex items-center justify-center p-0">
                   <img 
                     src="/logo.png" 
@@ -106,7 +106,7 @@ export default function DryingEstimate({ estimateHours, message, condition, onRe
 
           {/* Status and Icon on top of timer */}
           <div className="col-span-2 row-span-1">
-            <Card className="h-full tilt" style={{ aspectRatio: '2/1', marginLeft: '2px' }}>
+            <Card className="h-full tilt" style={{ aspectRatio: '2/1', marginLeft: '2px', backgroundColor: '#EBEBEB' }}>
               <CardHeader className="flex flex-row items-center gap-2 pb-2 px-4">
                 <Info className="h-6 w-6 text-primary" />
                 <CardTitle className="text-base">Status</CardTitle>
@@ -118,7 +118,7 @@ export default function DryingEstimate({ estimateHours, message, condition, onRe
           </div>
 
           <div className="col-span-1 row-span-1">
-            <Card className="h-full flex flex-col items-center justify-center p-2 tilt" style={{ aspectRatio: '1/1', marginLeft: '4px', backgroundColor: '#f2f2e8' }}>
+            <Card className="h-full flex flex-col items-center justify-center p-2 tilt" style={{ aspectRatio: '1/1', marginLeft: '4px', backgroundColor: '#C5E1ED' }}>
               <CardContent className="flex-1 flex items-center justify-center">
                 <div className="w-24 h-24 flex items-center justify-center">
                   {getWeatherIcon()}
@@ -129,7 +129,7 @@ export default function DryingEstimate({ estimateHours, message, condition, onRe
 
           {/* Timer - Largest component on bottom with 3:2 ratio */}
           <div className="col-span-3 row-span-2">
-            <Card className="h-full flex flex-col items-center justify-center p-6 tilt" style={{ aspectRatio: '3/2', backgroundColor: '#f5f5dc' }}>
+            <Card className="h-full flex flex-col items-center justify-center p-6 tilt" style={{ aspectRatio: '3/2', backgroundColor: '#F2D7A8' }}>
 
               <CardContent className="flex-1 flex flex-col items-center justify-center h-full">
                 <div className="scale-125 flex items-center justify-center mt-12">
@@ -147,7 +147,7 @@ export default function DryingEstimate({ estimateHours, message, condition, onRe
 
           {/* Aa - Next to timer */}
           <div className="col-span-1 row-span-1">
-            <Card className="h-full tilt" style={{ aspectRatio: '1/1', backgroundColor: '#f2f2e8' }}>
+            <Card className="h-full tilt" style={{ aspectRatio: '1/1', backgroundColor: '#D4C4A3' }}>
               <CardContent className="flex flex-col gap-3 p-4 justify-center items-center h-full">
                 <Button 
                   onClick={onRestart} 
@@ -175,7 +175,7 @@ export default function DryingEstimate({ estimateHours, message, condition, onRe
 
           {/* Quick Tips - Next to timer with 2:1 ratio */}
           <div className="col-span-2 row-span-1">
-            <Card className="h-full tilt" style={{ aspectRatio: '2/1', backgroundColor: '#e8e8d0' }}>
+            <Card className="h-full tilt" style={{ aspectRatio: '2/1', backgroundColor: '#B8D4E3' }}>
               <CardHeader className="flex flex-row items-center gap-2 pb-2">
                 <Lightbulb className="h-6 w-6 text-primary" />
                 <CardTitle className="text-base">Quick Tips</CardTitle>
