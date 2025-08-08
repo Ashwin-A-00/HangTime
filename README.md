@@ -1,11 +1,11 @@
 # HangTime 🎯
 
 ## Basic Details
-**Team Name:** Groove
+**Team Name:** Groove  
 
 **Team Members**  
-- **Team Lead:** [Ashwin A] – [CUSAT,SOE]  
-- **Member 2:** [Adithya M] – [CUSAT,SOE]  
+- **Team Lead:** Ashwin A – CUSAT, SOE  
+- **Member 2:** Adithya M – CUSAT, SOE  
 
 ---
 
@@ -52,39 +52,31 @@ git clone https://github.com/yourusername/hangtime.git
 
 # Navigate into the project
 cd hangtime
----
 
-### Run
-```bash
 # Install dependencies
 npm install
 
 # Start development server
 npm run dev
 
-
-
 # Build for production
 npm run build
 
 # Preview production build
 npm run preview
-
-### Screenshots
-
-![Screenshot1](./assets/screenshot1.png)  
-*Main dashboard showing drying time, weather status, and activity suggestions in a bento grid layout.*
-
-![Screenshot2](./assets/screenshot2.png)  
-*Particle animation background with interactive weather cards.*
-
-![Screenshot3](./assets/screenshot3.png)  
-*Location search interface using Nominatim API with debounced results.*
-
 ---
 
-### Diagrams
+Project Documentation
+Screenshots
 
-![Workflow](./assets/workflow-diagram.png)  
-*System architecture showing the flow from user input and geolocation, through weather API calls, to drying time calculation and activity suggestion rendering in the UI.*
+Main dashboard showing drying time, weather status, and activity suggestions in a bento grid layout.
 
+
+Particle animation background with interactive weather cards.
+
+
+Location search interface using Nominatim API with debounced results.
+
+Diagrams
+
+System architecture showing the flow from user input and geolocation, through weather API calls, to drying time calculation and activity suggestion rendering in the UI.
