@@ -107,8 +107,15 @@ export default function Index() {
         {step === 'location' && <LocationSearch onSelect={onLocationSelect} />}
         {step === 'summary' && (
           <div className="w-full">
-            <div className="text-center mb-2 text-sm opacity-80">{loc?.name}</div>
-            <WeatherSummary temp={temp} humidity={humidity} wind={wind} rainSoon={rainSoon} onNext={() => setStep('clothes')} />
+            <WeatherSummary 
+              temp={temp} 
+              humidity={humidity} 
+              wind={wind} 
+              rainSoon={rainSoon} 
+              condition={condition}
+              location={loc?.name || 'Unknown location'}
+              onNext={() => setStep('clothes')} 
+            />
           </div>
         )}
         {step === 'clothes' && (
