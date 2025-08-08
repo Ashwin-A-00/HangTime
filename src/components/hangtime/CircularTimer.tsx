@@ -8,11 +8,13 @@ type Props = {
 };
 
 export default function CircularTimer({ hours, minutes, totalHours }: Props) {
-  const [timeLeft, setTimeLeft] = useState(totalHours * 3600); // Convert to seconds
+  // Calculate initial time in seconds from the provided hours and minutes
+  const initialTimeInSeconds = (hours * 3600) + (minutes * 60);
+  const [timeLeft, setTimeLeft] = useState(initialTimeInSeconds);
   const [isRunning, setIsRunning] = useState(true);
 
-  // Calculate initial percentage
-  const initialPercentage = ((totalHours - (hours + minutes / 60)) / totalHours) * 100;
+  // Calculate initial percentage based on the actual drying time
+  const initialPercentage = 0; // Start at 0% since we're counting down from the full time
   const [percentage, setPercentage] = useState(initialPercentage);
   
   const remainingPercentage = Math.max(0, Math.min(100, Math.round(percentage)));
@@ -31,7 +33,7 @@ export default function CircularTimer({ hours, minutes, totalHours }: Props) {
         }
         
         const newTime = prevTime - 1;
-        const newPercentage = ((newTime / (totalHours * 3600)) * 100);
+        const newPercentage = ((newTime / initialTimeInSeconds) * 100);
         setPercentage(newPercentage);
         
         return newTime;

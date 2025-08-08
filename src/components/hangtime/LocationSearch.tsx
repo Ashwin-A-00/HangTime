@@ -63,7 +63,7 @@ export default function LocationSearch({ onSelect }: Props) {
 
   return (
     <section className="container max-w-xl mx-auto py-12 animate-fade-in" aria-labelledby="location-title">
-      <h1 id="location-title" className="font-display text-4xl md:text-5xl font-bold text-center mb-6">HangTime — Best Time to Air‑Dry Clothes</h1>
+              <h1 id="location-title" className="font-display text-4xl md:text-5xl font-bold text-center mb-6">HangTime</h1>
       <p className="text-center text-muted-foreground mb-8">Enter your location to get real‑time drying advice.</p>
       <div className="relative">
         <div className={`absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground ${glow ? 'animate-[pulse_1.5s_ease-in-out_infinite]' : ''}`}>

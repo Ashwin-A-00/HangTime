@@ -6,7 +6,6 @@ import LocationSearch, { LocationItem } from '@/components/hangtime/LocationSear
 import WeatherSummary from '@/components/hangtime/WeatherSummary';
 import ClothingSelect from '@/components/hangtime/ClothingSelect';
 import DryingEstimate from '@/components/hangtime/DryingEstimate';
-import ActivitySuggestions from '@/components/hangtime/ActivitySuggestions';
 
 // Helpers
 function classifyCondition(weathercode: number, precipProbNext2h: number): 'sunny' | 'cloudy' | 'rainy' {
@@ -31,7 +30,7 @@ function estimateDryTime(base: number, temp: number, humidity: number, wind: num
 }
 
 export default function Index() {
-  const [step, setStep] = useState<'logo'|'location'|'summary'|'clothes'|'estimate'|'suggestions'>('logo');
+  const [step, setStep] = useState<'logo'|'location'|'summary'|'clothes'|'estimate'>('logo');
   const [loc, setLoc] = useState<LocationItem | null>(null);
   const [weather, setWeather] = useState<any | null>(null);
   const [condition, setCondition] = useState<'sunny'|'cloudy'|'rainy'>('sunny');
@@ -89,7 +88,7 @@ export default function Index() {
   const message = useMemo(() => {
     if (estimate <= 2) return 'Perfect time to get these on the line!';
     if (estimate <= 4) return 'Good drying conditions today.';
-    if (rainSoon) return 'Might be tricky with rain — consider indoor drying.';
+    if (rainSoon) return 'Rainy weather ahead — outdoor drying will be slow. Try using an indoor rack near sunlight or a fan for faster, fresher results.';
     return 'It will take a while — pick a cozy activity!';
   }, [estimate, rainSoon]);
 
@@ -97,6 +96,10 @@ export default function Index() {
     setStep('location');
     setSelected(undefined);
     setLoc(null);
+  };
+
+  const goBack = () => {
+    setStep('clothes');
   };
 
   return (
@@ -127,10 +130,13 @@ export default function Index() {
           />
         )}
         {step === 'estimate' && (
-          <DryingEstimate estimateHours={estimate} message={message} onNext={() => setStep('suggestions')} />
-        )}
-        {step === 'suggestions' && (
-          <ActivitySuggestions condition={condition} onRestart={restart} />
+          <DryingEstimate 
+            estimateHours={estimate} 
+            message={message} 
+            condition={condition}
+            onRestart={restart} 
+            onBack={goBack}
+          />
         )}
       </main>
     </WeatherBackground>

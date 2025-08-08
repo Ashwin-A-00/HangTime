@@ -16,9 +16,9 @@ type Props = {
 
 export default function WeatherSummary({ temp, humidity, wind, rainSoon, condition, location, onNext }: Props) {
   const items = [
-    { title: 'Temperature', value: `${Math.round(temp)}°C` },
-    { title: 'Humidity', value: `${Math.round(humidity)}%` },
-    { title: 'Wind', value: `${Math.round(wind)} m/s` },
+    { title: 'Temperature', value: `${Math.round(temp)}°C`, bgImage: '/temp.jpeg' },
+    { title: 'Humidity', value: `${Math.round(humidity)}%`, bgImage: '/humidity.jpeg' },
+    { title: 'Wind', value: `${Math.round(wind)} m/s`, bgImage: '/wind.jpeg' },
   ];
 
   const getWeatherIcon = () => {
@@ -65,11 +65,28 @@ export default function WeatherSummary({ temp, humidity, wind, rainSoon, conditi
       {/* Weather Data Cards */}
       <div className="flex flex-col gap-3 max-w-sm mx-auto mb-6">
         {items.map((it, i) => (
-          <Card key={it.title} className="tilt">
-            <CardHeader className="pb-2">
+          <Card 
+            key={it.title} 
+            className="tilt relative overflow-hidden group"
+            style={{
+              backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.3) 100%), url(${it.bgImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'left center',
+              transition: 'all 0.3s ease-in-out'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundPosition = 'right center';
+              e.currentTarget.style.transform = 'scale(1.02) translateX(10px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundPosition = 'left center';
+              e.currentTarget.style.transform = 'scale(1) translateX(0)';
+            }}
+          >
+            <CardHeader className="pb-2 relative z-10">
               <CardTitle className="text-sm">{it.title}</CardTitle>
             </CardHeader>
-            <CardContent className="pt-0">
+            <CardContent className="pt-0 relative z-10">
               <p className="text-xl font-semibold">{it.value}</p>
             </CardContent>
           </Card>

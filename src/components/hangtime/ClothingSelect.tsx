@@ -92,9 +92,10 @@ export default function ClothingSelect({ onSelect, selected, onNext, condition }
                key={key} 
                onClick={() => onSelect(key)} 
                aria-pressed={active} 
-               className={`group relative rounded-xl border p-4 bg-card card-shadow hover-scale tilt ${
+               className={`group relative rounded-xl border p-4 card-shadow hover-scale tilt ${
                  active ? 'ring-2 ring-ring border-black border-2' : 'border-border'
                }`}
+               style={{ backgroundColor: '#F5F3E7' }}
              >
                <Card className="border-0 shadow-none bg-transparent">
                  <CardContent className="p-0 flex flex-row items-center gap-4">
