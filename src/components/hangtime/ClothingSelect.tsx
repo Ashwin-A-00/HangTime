@@ -3,9 +3,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { CloudRain, Cloud, Sun } from 'lucide-react';
-import TShirt from './icons/TShirt';
-import Jeans from './icons/Jeans';
-import Blanket from './icons/Blanket';
 
 type Props = {
   onSelect: (type: 'light' | 'medium' | 'heavy') => void;
@@ -19,19 +16,19 @@ export default function ClothingSelect({ onSelect, selected, onNext, condition }
     { 
       key: 'light', 
       title: 'Light', 
-      Icon: TShirt,
+      image: '/t-shirt.png',
       examples: 'T-shirts, Underwear, Socks'
     },
     { 
       key: 'medium', 
       title: 'Medium', 
-      Icon: Jeans,
+      image: '/pant.png',
       examples: 'Shirts, Pants, Shorts'
     },
     { 
       key: 'heavy', 
       title: 'Heavy', 
-      Icon: Blanket,
+      image: '/hoodie.png',
       examples: 'Sweatshirts, Hoodies, Jackets'
     },
   ] as const;
@@ -87,24 +84,30 @@ export default function ClothingSelect({ onSelect, selected, onNext, condition }
         </div>
       )}
       
-      <div className="flex flex-col gap-4 max-w-md mx-auto">
-        {cards.map(({ key, title, Icon, examples }) => {
-          const active = selected === key;
-          return (
-            <button 
-              key={key} 
-              onClick={() => onSelect(key)} 
-              aria-pressed={active} 
-              className={`group relative rounded-xl border p-4 bg-card card-shadow hover-scale tilt ${active ? 'ring-2 ring-ring' : ''}`}
-            >
-              <Card className="border-0 shadow-none bg-transparent">
-                <CardContent className="p-0 flex flex-row items-center gap-4">
-                  <div className="w-16 h-16">
-                    <Icon />
-                  </div>
-                  <div className="text-lg font-medium">{title}</div>
-                </CardContent>
-              </Card>
+             <div className="flex flex-col gap-4 max-w-md mx-auto">
+         {cards.map(({ key, title, image, examples }) => {
+           const active = selected === key;
+           return (
+             <button 
+               key={key} 
+               onClick={() => onSelect(key)} 
+               aria-pressed={active} 
+               className={`group relative rounded-xl border p-4 bg-card card-shadow hover-scale tilt ${
+                 active ? 'ring-2 ring-ring border-black border-2' : 'border-border'
+               }`}
+             >
+               <Card className="border-0 shadow-none bg-transparent">
+                 <CardContent className="p-0 flex flex-row items-center gap-4">
+                   <div className="w-16 h-16 flex items-center justify-center">
+                     <img 
+                       src={image} 
+                       alt={`${title} clothing icon`}
+                       className="w-12 h-12 object-contain"
+                     />
+                   </div>
+                   <div className="text-lg font-medium">{title}</div>
+                 </CardContent>
+               </Card>
               
               {/* Hover tooltip with examples */}
               <div className="absolute bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t rounded-b-xl p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
