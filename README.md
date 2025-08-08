@@ -70,3 +70,21 @@ npm run build
 # Preview production build
 npm run preview
 
+### Screenshots
+
+![Screenshot1](./assets/screenshot1.png)  
+*Main dashboard showing drying time, weather status, and activity suggestions in a bento grid layout.*
+
+![Screenshot2](./assets/screenshot2.png)  
+*Particle animation background with interactive weather cards.*
+
+![Screenshot3](./assets/screenshot3.png)  
+*Location search interface using Nominatim API with debounced results.*
+
+---
+
+### Diagrams
+
+![Workflow](./assets/workflow-diagram.png)  
+*System architecture showing the flow from user input and geolocation, through weather API calls, to drying time calculation and activity suggestion rendering in the UI.*
+
