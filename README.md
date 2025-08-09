@@ -86,3 +86,7 @@ npm run preview
 
 ![Workflow](./assets/diagram.jpeg)  
 *System architecture showing the flow from user input and geolocation, through weather API calls, to drying time calculation and activity suggestion rendering in the UI.*
+
+### Video
+
+Youtube Link : https://youtu.be/IduMye8rpss
